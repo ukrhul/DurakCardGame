@@ -3,9 +3,10 @@
   <Class Name="DurakCardLibrary.Card">
     <Position X="3.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAIAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AEAAAAAAAQAAAAAEgACAAgAAAAAAAIgAAAAAAAIEBzA=</HashCode>
       <FileName>Card.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="DurakCardLibrary.Deck">
     <Position X="6.25" Y="0.5" Width="1.5" />
