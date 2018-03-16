@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WriteLog.cs" />
     <EmbeddedResource Include="frmGameScreen.resx">
       <DependentUpon>frmGameScreen.cs</DependentUpon>
     </EmbeddedResource>
