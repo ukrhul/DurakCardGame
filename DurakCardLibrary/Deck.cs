@@ -1,4 +1,5 @@
-﻿using DurakCardGame;
+﻿using Ch11CardLib;
+using DurakCardGame;
 using System;
 
 namespace DurakCardLibrary
