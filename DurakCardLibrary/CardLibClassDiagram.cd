@@ -6,17 +6,33 @@
       <HashCode>AEAAAAAAAQAAAAAEgACAAgAAAAAAAIgAAAAAAAIEBzA=</HashCode>
       <FileName>Card.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="rank" />
+      <Field Name="suit" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="DurakCardLibrary.Deck">
     <Position X="6.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAQAAAAAAAAAAAAAAAEBA=</HashCode>
       <FileName>Deck.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cards" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Ch11CardLib.Cards">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBA=</HashCode>
+      <FileName>Cards.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Enum Name="DurakCardLibrary.FaceStatus">
-    <Position X="3" Y="3.5" Width="1.5" />
+    <Position X="1.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>FaceStatusEnum.cs</FileName>
@@ -30,7 +46,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="DurakCardGame.Suit">
-    <Position X="4.75" Y="3.5" Width="1.5" />
+    <Position X="6" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAEAAAAAAAAABAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>SuitEnum.cs</FileName>
