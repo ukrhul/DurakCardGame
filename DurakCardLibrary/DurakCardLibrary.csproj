@@ -51,6 +51,61 @@
   <ItemGroup>
     <None Include="CardLibClassDiagram.cd" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cards\10C.png" />
+    <Content Include="Cards\10D.png" />
+    <Content Include="Cards\10H.png" />
+    <Content Include="Cards\10S.png" />
+    <Content Include="Cards\2C.png" />
+    <Content Include="Cards\2D.png" />
+    <Content Include="Cards\2H.png" />
+    <Content Include="Cards\2S.png" />
+    <Content Include="Cards\3C.png" />
+    <Content Include="Cards\3D.png" />
+    <Content Include="Cards\3H.png" />
+    <Content Include="Cards\3S.png" />
+    <Content Include="Cards\4C.png" />
+    <Content Include="Cards\4D.png" />
+    <Content Include="Cards\4H.png" />
+    <Content Include="Cards\4S.png" />
+    <Content Include="Cards\5C.png" />
+    <Content Include="Cards\5D.png" />
+    <Content Include="Cards\5H.png" />
+    <Content Include="Cards\5S.png" />
+    <Content Include="Cards\6C.png" />
+    <Content Include="Cards\6D.png" />
+    <Content Include="Cards\6H.png" />
+    <Content Include="Cards\6S.png" />
+    <Content Include="Cards\7C.png" />
+    <Content Include="Cards\7D.png" />
+    <Content Include="Cards\7H.png" />
+    <Content Include="Cards\7S.png" />
+    <Content Include="Cards\8C.png" />
+    <Content Include="Cards\8D.png" />
+    <Content Include="Cards\8H.png" />
+    <Content Include="Cards\8S.png" />
+    <Content Include="Cards\9C.png" />
+    <Content Include="Cards\9D.png" />
+    <Content Include="Cards\9H.png" />
+    <Content Include="Cards\9S.png" />
+    <Content Include="Cards\AC.png" />
+    <Content Include="Cards\aces.png" />
+    <Content Include="Cards\AD.png" />
+    <Content Include="Cards\AH.png" />
+    <Content Include="Cards\AS.png" />
+    <Content Include="Cards\JC.png" />
+    <Content Include="Cards\JD.png" />
+    <Content Include="Cards\JH.png" />
+    <Content Include="Cards\JS.png" />
+    <Content Include="Cards\KC.png" />
+    <Content Include="Cards\KD.png" />
+    <Content Include="Cards\KH.png" />
+    <Content Include="Cards\KS.png" />
+    <Content Include="Cards\QC.png" />
+    <Content Include="Cards\QD.png" />
+    <Content Include="Cards\QH.png" />
+    <Content Include="Cards\QS.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
