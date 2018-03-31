@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using DurakCardLibrary;
 
 namespace DurakCardGame
 {
@@ -18,7 +19,9 @@ namespace DurakCardGame
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-           
+            Form frmGameScreen = new frmGameScreen();
+            frmGameScreen.Show();
+            this.Hide();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
