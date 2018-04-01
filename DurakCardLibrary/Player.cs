@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace DurakCardLibrary
 {
-    class Player
+    public abstract class Player
     {
+        private string playerName;
+
+        public string PlayerName
+        {
+            get { return playerName; }
+            set { playerName = value; }
+        }
+        
     }
 }

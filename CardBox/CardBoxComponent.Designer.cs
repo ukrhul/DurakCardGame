@@ -1,6 +1,6 @@
 ﻿namespace CardBox
 {
-    partial class CardBox
+    partial class CardBoxComponent
     {
         /// <summary>
         /// Required designer variable.

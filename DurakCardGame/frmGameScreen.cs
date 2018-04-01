@@ -1,50 +1,39 @@
-﻿using System;
+﻿using CardBox;
+using DurakCardLibrary;
+using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace DurakCardGame 
+namespace DurakCardGame
 {
     public partial class frmGameScreen : Form
     {
 
-        PictureBox[] cardDeck = new PictureBox[52];
-        //public const string PATH_OF_CARDS
+        Deck durakDeck;
 
         public frmGameScreen()
         {
             InitializeComponent();
-            SetPosition(2);
+            setDefault();
         }
 
-        public void SetPosition(int numberOfPlayer)
+       public void setDefault()
         {
-           //PictureBox[] cardDeck = new PictureBox[numberOfPlayer - 1];
-            
-            //switch(playerNumber)
-            //{
-            //    case 3:
-            //        cardDeck.Left = 10;
-            //        cardDeck.Top = 10;
-            //        break;
+            CardBoxComponent cbxDeck = new CardBoxComponent();
+            cbxDeck.Left = 14;
+            cbxDeck.Top = 14;
+            cbxDeck.Height = 60;
+            cbxDeck.Width = 40;
+            grpBxDeck.Controls.Add(cbxDeck);
 
-            //    case 4:
-            //        cardDeck.Left = 10;
-            //        cardDeck.Top = 10;
-            //        break;
-            //}
+        }
 
-            if (numberOfPlayer == 2)
-            {
-                Image image = Properties.Resources.background;
-                var pictureBox = new PictureBox();
-                pictureBox.BackColor = System.Drawing.Color.AliceBlue;
-                pictureBox.Width = 100;
-                pictureBox.Height = 100;
-                pictureBox.Top = 10;
-                pictureBox.Left = 10;
-                cardDeck[0].Image = image;
-            }
-
+        public void createDeck(int deckSize)
+        {
+            durakDeck = new Deck(deckSize);
+            durakDeck.Shuffle(deckSize);
+            lblDeckCounter.Text = durakDeck.remainingCard().ToString();
         }
 
     }

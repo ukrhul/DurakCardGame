@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Card.cs" />
     <Compile Include="Cards.cs" />
+    <Compile Include="DeckSize.cs" />
     <Compile Include="Deck.cs" />
     <Compile Include="FaceStatusEnum.cs" />
     <Compile Include="Player.cs" />

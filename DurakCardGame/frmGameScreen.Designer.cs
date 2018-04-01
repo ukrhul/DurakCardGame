@@ -29,34 +29,37 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGameScreen));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpBxPlayingField = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.grpBxPlayer1 = new System.Windows.Forms.GroupBox();
+            this.grpBxPlayer2 = new System.Windows.Forms.GroupBox();
+            this.grpBxPlayer3 = new System.Windows.Forms.GroupBox();
+            this.grpBxPlayer4 = new System.Windows.Forms.GroupBox();
+            this.grpBxPlayer5 = new System.Windows.Forms.GroupBox();
+            this.grpBxHuman = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grbBxPlayer5 = new System.Windows.Forms.GroupBox();
+            this.lblDeckCounter = new System.Windows.Forms.Label();
+            this.grpBxDeck = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
+            this.grpBxDeck.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grpBxPlayingField
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(218, 284);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(838, 241);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Playing Field";
+            this.grpBxPlayingField.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxPlayingField.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grpBxPlayingField.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBxPlayingField.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxPlayingField.Location = new System.Drawing.Point(218, 284);
+            this.grpBxPlayingField.Name = "grpBxPlayingField";
+            this.grpBxPlayingField.Size = new System.Drawing.Size(838, 241);
+            this.grpBxPlayingField.TabIndex = 2;
+            this.grpBxPlayingField.TabStop = false;
+            this.grpBxPlayingField.Text = "Playing Field";
             // 
             // button1
             // 
@@ -70,96 +73,83 @@
             this.button1.Text = "DEFAUlT";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // groupBox2
+            // grpBxPlayer1
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox2.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(12, 36);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(227, 242);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Player 1";
+            this.grpBxPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grpBxPlayer1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBxPlayer1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxPlayer1.Location = new System.Drawing.Point(12, 36);
+            this.grpBxPlayer1.Name = "grpBxPlayer1";
+            this.grpBxPlayer1.Size = new System.Drawing.Size(187, 214);
+            this.grpBxPlayer1.TabIndex = 3;
+            this.grpBxPlayer1.TabStop = false;
+            this.grpBxPlayer1.Text = "Player 1";
             // 
-            // groupBox3
+            // grpBxPlayer2
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox3.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox3.Location = new System.Drawing.Point(261, 36);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(227, 242);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Player 2";
+            this.grpBxPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grpBxPlayer2.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBxPlayer2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxPlayer2.Location = new System.Drawing.Point(218, 36);
+            this.grpBxPlayer2.Name = "grpBxPlayer2";
+            this.grpBxPlayer2.Size = new System.Drawing.Size(187, 214);
+            this.grpBxPlayer2.TabIndex = 4;
+            this.grpBxPlayer2.TabStop = false;
+            this.grpBxPlayer2.Text = "Player 2";
             // 
-            // groupBox4
+            // grpBxPlayer3
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox4.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox4.Location = new System.Drawing.Point(509, 36);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(227, 242);
-            this.groupBox4.TabIndex = 4;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Player 3";
+            this.grpBxPlayer3.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxPlayer3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grpBxPlayer3.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBxPlayer3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxPlayer3.Location = new System.Drawing.Point(414, 36);
+            this.grpBxPlayer3.Name = "grpBxPlayer3";
+            this.grpBxPlayer3.Size = new System.Drawing.Size(187, 214);
+            this.grpBxPlayer3.TabIndex = 4;
+            this.grpBxPlayer3.TabStop = false;
+            this.grpBxPlayer3.Text = "Player 3";
             // 
-            // groupBox5
+            // grpBxPlayer4
             // 
-            this.groupBox5.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox5.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox5.Location = new System.Drawing.Point(764, 36);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(227, 242);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Player 4";
+            this.grpBxPlayer4.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxPlayer4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grpBxPlayer4.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBxPlayer4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxPlayer4.Location = new System.Drawing.Point(618, 36);
+            this.grpBxPlayer4.Name = "grpBxPlayer4";
+            this.grpBxPlayer4.Size = new System.Drawing.Size(187, 214);
+            this.grpBxPlayer4.TabIndex = 4;
+            this.grpBxPlayer4.TabStop = false;
+            this.grpBxPlayer4.Text = "Player 4";
             // 
-            // groupBox6
+            // grpBxPlayer5
             // 
-            this.groupBox6.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox6.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox6.Location = new System.Drawing.Point(1015, 36);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(218, 242);
-            this.groupBox6.TabIndex = 4;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Player 5";
+            this.grpBxPlayer5.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxPlayer5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grpBxPlayer5.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBxPlayer5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxPlayer5.Location = new System.Drawing.Point(823, 36);
+            this.grpBxPlayer5.Name = "grpBxPlayer5";
+            this.grpBxPlayer5.Size = new System.Drawing.Size(187, 214);
+            this.grpBxPlayer5.TabIndex = 4;
+            this.grpBxPlayer5.TabStop = false;
+            this.grpBxPlayer5.Text = "Player 5";
             // 
-            // groupBox7
+            // grpBxHuman
             // 
-            this.groupBox7.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox7.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox7.Location = new System.Drawing.Point(218, 531);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(838, 192);
-            this.groupBox7.TabIndex = 4;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "You";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox8.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox8.Location = new System.Drawing.Point(12, 284);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(187, 241);
-            this.groupBox8.TabIndex = 4;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Deck";
+            this.grpBxHuman.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxHuman.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grpBxHuman.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBxHuman.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxHuman.Location = new System.Drawing.Point(218, 531);
+            this.grpBxHuman.Name = "grpBxHuman";
+            this.grpBxHuman.Size = new System.Drawing.Size(838, 192);
+            this.grpBxHuman.TabIndex = 4;
+            this.grpBxHuman.TabStop = false;
+            this.grpBxHuman.Text = "You";
             // 
             // menuStrip1
             // 
@@ -192,21 +182,58 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
+            // grbBxPlayer5
+            // 
+            this.grbBxPlayer5.BackColor = System.Drawing.Color.Transparent;
+            this.grbBxPlayer5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grbBxPlayer5.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbBxPlayer5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grbBxPlayer5.Location = new System.Drawing.Point(1031, 36);
+            this.grbBxPlayer5.Name = "grbBxPlayer5";
+            this.grbBxPlayer5.Size = new System.Drawing.Size(187, 214);
+            this.grbBxPlayer5.TabIndex = 5;
+            this.grbBxPlayer5.TabStop = false;
+            this.grbBxPlayer5.Text = "Player 5";
+            // 
+            // lblDeckCounter
+            // 
+            this.lblDeckCounter.AutoSize = true;
+            this.lblDeckCounter.Location = new System.Drawing.Point(66, 200);
+            this.lblDeckCounter.Name = "lblDeckCounter";
+            this.lblDeckCounter.Size = new System.Drawing.Size(41, 33);
+            this.lblDeckCounter.TabIndex = 1;
+            this.lblDeckCounter.Text = "36";
+            // 
+            // grpBxDeck
+            // 
+            this.grpBxDeck.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxDeck.Controls.Add(this.lblDeckCounter);
+            this.grpBxDeck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grpBxDeck.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBxDeck.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxDeck.Location = new System.Drawing.Point(12, 284);
+            this.grpBxDeck.Name = "grpBxDeck";
+            this.grpBxDeck.Size = new System.Drawing.Size(187, 241);
+            this.grpBxDeck.TabIndex = 4;
+            this.grpBxDeck.TabStop = false;
+            this.grpBxDeck.Text = "Deck";
+            // 
             // frmGameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DurakCardGame.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1245, 749);
-            this.Controls.Add(this.groupBox8);
-            this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grbBxPlayer5);
+            this.Controls.Add(this.grpBxDeck);
+            this.Controls.Add(this.grpBxHuman);
+            this.Controls.Add(this.grpBxPlayer5);
+            this.Controls.Add(this.grpBxPlayer4);
+            this.Controls.Add(this.grpBxPlayer3);
+            this.Controls.Add(this.grpBxPlayer2);
+            this.Controls.Add(this.grpBxPlayer1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpBxPlayingField);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -215,6 +242,8 @@
             this.Text = "Durak Game";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.grpBxDeck.ResumeLayout(false);
+            this.grpBxDeck.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,18 +251,20 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpBxPlayingField;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox grpBxPlayer1;
+        private System.Windows.Forms.GroupBox grpBxPlayer2;
+        private System.Windows.Forms.GroupBox grpBxPlayer3;
+        private System.Windows.Forms.GroupBox grpBxPlayer4;
+        private System.Windows.Forms.GroupBox grpBxPlayer5;
+        private System.Windows.Forms.GroupBox grpBxHuman;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.GroupBox grbBxPlayer5;
+        private System.Windows.Forms.Label lblDeckCounter;
+        private System.Windows.Forms.GroupBox grpBxDeck;
     }
 }

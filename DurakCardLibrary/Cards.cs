@@ -14,9 +14,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using DurakCardLibrary;
 
-namespace Ch11CardLib
+namespace DurakCardLibrary
 {
     public class Cards: List<Card>, ICloneable
     {

@@ -20,7 +20,7 @@ using DurakCardGame;
 
 namespace CardBox
 {
-    public partial class CardBox : UserControl
+    public partial class CardBoxComponent : UserControl
     {
 
         #region " --- Property Procedures ---"
@@ -83,7 +83,7 @@ namespace CardBox
         /// <summary>
         /// Default constructors 
         /// </summary>
-        public CardBox()
+        public CardBoxComponent()
         {
             InitializeComponent();   // Initialise the card box components
             myCard = new Card();     // Instance of card

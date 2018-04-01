@@ -31,18 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDurakCardGame));
             this.lblHeadingMain = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbTransfer = new System.Windows.Forms.RadioButton();
+            this.rbThrowIn = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudPlayer = new System.Windows.Forms.NumericUpDown();
             this.cbxDeckSize = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.rbThrowIn = new System.Windows.Forms.RadioButton();
-            this.rbTransfer = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPlayer)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHeadingMain
@@ -72,10 +72,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Game Type";
             // 
+            // rbTransfer
+            // 
+            this.rbTransfer.AutoSize = true;
+            this.rbTransfer.Location = new System.Drawing.Point(242, 63);
+            this.rbTransfer.Name = "rbTransfer";
+            this.rbTransfer.Size = new System.Drawing.Size(121, 37);
+            this.rbTransfer.TabIndex = 5;
+            this.rbTransfer.TabStop = true;
+            this.rbTransfer.Text = "Transfer";
+            this.rbTransfer.UseVisualStyleBackColor = true;
+            // 
+            // rbThrowIn
+            // 
+            this.rbThrowIn.AutoSize = true;
+            this.rbThrowIn.Location = new System.Drawing.Point(57, 63);
+            this.rbThrowIn.Name = "rbThrowIn";
+            this.rbThrowIn.Size = new System.Drawing.Size(132, 37);
+            this.rbThrowIn.TabIndex = 4;
+            this.rbThrowIn.TabStop = true;
+            this.rbThrowIn.Text = "Throw In";
+            this.rbThrowIn.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.nudPlayer);
             this.groupBox2.Controls.Add(this.cbxDeckSize);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
@@ -89,27 +111,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Settings";
             // 
-            // numericUpDown1
+            // nudPlayer
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(169, 95);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nudPlayer.Location = new System.Drawing.Point(169, 95);
+            this.nudPlayer.Maximum = new decimal(new int[] {
             6,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.nudPlayer.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 38);
-            this.numericUpDown1.TabIndex = 3;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nudPlayer.Name = "nudPlayer";
+            this.nudPlayer.Size = new System.Drawing.Size(120, 38);
+            this.nudPlayer.TabIndex = 3;
+            this.nudPlayer.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nudPlayer.ValueChanged += new System.EventHandler(this.nudPlayer_ValueChanged);
             // 
             // cbxDeckSize
             // 
@@ -123,6 +146,7 @@
             this.cbxDeckSize.Name = "cbxDeckSize";
             this.cbxDeckSize.Size = new System.Drawing.Size(121, 33);
             this.cbxDeckSize.TabIndex = 2;
+            this.cbxDeckSize.SelectedIndexChanged += new System.EventHandler(this.cbxDeckSize_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -158,6 +182,7 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Black;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.Control;
             this.btnExit.Location = new System.Drawing.Point(33, 395);
@@ -168,34 +193,14 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // rbThrowIn
-            // 
-            this.rbThrowIn.AutoSize = true;
-            this.rbThrowIn.Location = new System.Drawing.Point(57, 63);
-            this.rbThrowIn.Name = "rbThrowIn";
-            this.rbThrowIn.Size = new System.Drawing.Size(132, 37);
-            this.rbThrowIn.TabIndex = 4;
-            this.rbThrowIn.TabStop = true;
-            this.rbThrowIn.Text = "Throw In";
-            this.rbThrowIn.UseVisualStyleBackColor = true;
-            // 
-            // rbTransfer
-            // 
-            this.rbTransfer.AutoSize = true;
-            this.rbTransfer.Location = new System.Drawing.Point(242, 63);
-            this.rbTransfer.Name = "rbTransfer";
-            this.rbTransfer.Size = new System.Drawing.Size(121, 37);
-            this.rbTransfer.TabIndex = 5;
-            this.rbTransfer.TabStop = true;
-            this.rbTransfer.Text = "Transfer";
-            this.rbTransfer.UseVisualStyleBackColor = true;
-            // 
             // frmDurakCardGame
             // 
+            this.AcceptButton = this.btnStart;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DurakCardGame.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(520, 440);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnExit);
@@ -211,7 +216,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPlayer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,7 +227,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudPlayer;
         private System.Windows.Forms.ComboBox cbxDeckSize;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

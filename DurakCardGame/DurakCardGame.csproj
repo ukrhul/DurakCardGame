@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CardDisplayAndLayout.cs" />
+    <Compile Include="DurakPlayer.cs" />
     <Compile Include="frmGameScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +59,10 @@
     </Compile>
     <Compile Include="frmWelcomeScreen.Designer.cs">
       <DependentUpon>frmWelcomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameAction.cs" />
+    <Compile Include="GameSetting.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +97,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CardBox\CardBox.csproj">
+      <Project>{B1D319E1-A7DD-428E-B7BB-7424AC73E0F3}</Project>
+      <Name>CardBox</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DurakCardLibrary\DurakCardLibrary.csproj">
       <Project>{57835ae1-32fd-4b6a-ac13-3b16567cd972}</Project>
       <Name>DurakCardLibrary</Name>
