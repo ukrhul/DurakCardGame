@@ -41,6 +41,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grbBxPlayer5 = new System.Windows.Forms.GroupBox();
             this.lblDeckCounter = new System.Windows.Forms.Label();
             this.grpBxDeck = new System.Windows.Forms.GroupBox();
@@ -178,9 +179,18 @@
             // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // grbBxPlayer5
             // 
@@ -240,6 +250,7 @@
             this.Name = "frmGameScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Durak Game";
+            this.Load += new System.EventHandler(this.frmGameScreen_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpBxDeck.ResumeLayout(false);
@@ -266,5 +277,6 @@
         private System.Windows.Forms.GroupBox grbBxPlayer5;
         private System.Windows.Forms.Label lblDeckCounter;
         private System.Windows.Forms.GroupBox grpBxDeck;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }

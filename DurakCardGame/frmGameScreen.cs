@@ -94,5 +94,15 @@ namespace DurakCardGame
 
         }
 
+        private void frmGameScreen_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHelpForm helpForm = new frmHelpForm();
+            helpForm.ShowDialog();
+        }
     }
 }
