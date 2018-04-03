@@ -43,10 +43,11 @@
   <ItemGroup>
     <Compile Include="Card.cs" />
     <Compile Include="Cards.cs" />
-    <Compile Include="DeckSize.cs" />
+    <Compile Include="DeckSizeEnum.cs" />
     <Compile Include="Deck.cs" />
     <Compile Include="FaceStatusEnum.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="PlayerHand.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

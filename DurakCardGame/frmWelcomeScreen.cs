@@ -38,19 +38,18 @@ namespace DurakCardGame
         private void cbxDeckSize_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-           // frmGameScreen gmSetting = new frmGameScreen();
 
             if (cbxDeckSize.SelectedIndex == 0)
             {
-                gmScreen.createDeck((int)DeckSize.DeckSize20);
+                gmScreen.setDefault((int)DeckSizeEnum.DeckSize20);
             }
             else if(cbxDeckSize.SelectedIndex == 1)
             {
-                gmScreen.createDeck((int)DeckSize.DeckSizeDefault);
+                gmScreen.setDefault((int)DeckSizeEnum.DeckSizeDefault);
             }
             else if (cbxDeckSize.SelectedIndex == 2)
             {
-                gmScreen.createDeck((int)DeckSize.DeckSizeFull);
+                gmScreen.setDefault((int)DeckSizeEnum.DeckSizeFull);
             }
 
         }
@@ -61,7 +60,7 @@ namespace DurakCardGame
             switch(numberOfPlayers)
             {
                 case 1:
-
+                    
                     break;
 
                 case 2:

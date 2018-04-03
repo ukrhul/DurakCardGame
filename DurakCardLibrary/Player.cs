@@ -8,7 +8,7 @@ namespace DurakCardLibrary
 {
     public abstract class Player
     {
-        private string playerName;
+        public string playerName;
 
         public string PlayerName
         {

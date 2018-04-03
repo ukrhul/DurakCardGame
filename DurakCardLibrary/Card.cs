@@ -57,7 +57,7 @@ namespace DurakCardLibrary
         public override string ToString()
         {
             //Return the string in below format
-            return "The " + rank + " of " + suit + "s";
+            return "The " + rank + " of " + suit;
         }
 
         /// <summary>

@@ -87,6 +87,8 @@ namespace CardBox
         {
             InitializeComponent();   // Initialise the card box components
             myCard = new Card();     // Instance of card
+            myCard.suit = Suit.Clubs;
+            myCard.rank = Rank.Ace;
         }
         #endregion
 
@@ -95,7 +97,7 @@ namespace CardBox
         /// updateCardImage method to set
         /// the picture box to card
         /// </summary>
-        private void updateCardImage()
+        public void updateCardImage()
         {
             // Setting the mycard image to picture box
             pbCardImage.Image = myCard.GetCardImage();

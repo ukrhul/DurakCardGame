@@ -4,7 +4,7 @@ using System;
 namespace DurakCardLibrary
 {
 
-	public class Deck : ICloneable
+    public class Deck : ICloneable
 	{
 		//private Card[] cards;           //Creates the array of cards
 		private Cards cards = new Cards();
@@ -74,7 +74,7 @@ namespace DurakCardLibrary
                 //for loop to go through rank
                 for (int rankVal = 1; rankVal < 14; rankVal++)
                 {
-                    if (deckSize == (int)DeckSize.DeckSize20)
+                    if (deckSize == (int)DeckSizeEnum.DeckSize20)
                     {
 
                         if (rankVal > 9 || rankVal < 2)
@@ -83,7 +83,7 @@ namespace DurakCardLibrary
                         }
 
                     }
-                    else if (deckSize == (int)DeckSize.DeckSizeDefault)
+                    else if (deckSize == (int)DeckSizeEnum.DeckSizeDefault)
                     {
                         if (rankVal < 2 || rankVal > 5)
                         {
@@ -125,14 +125,14 @@ namespace DurakCardLibrary
         /// </summary>
         public void Shuffle(int deckSize)
 		{
-            if (deckSize == (int)DeckSize.DeckSize20)
+            if (deckSize == (int)DeckSizeEnum.DeckSize20)
             {
                 Cards newDeck = new Cards();
-                bool[] assigned = new bool[(int)DeckSize.DeckSize20];         //Array of bool to check card already assigned or not
+                bool[] assigned = new bool[(int)DeckSizeEnum.DeckSize20];         //Array of bool to check card already assigned or not
                 Random sourceGen = new Random();        //Instance to generate random number
 
                 //for loop to go through all cards 
-                for (int i = 0; i < (int)DeckSize.DeckSize20; i++)
+                for (int i = 0; i < (int)DeckSizeEnum.DeckSize20; i++)
                 {
                     int sourceCard = 0;
                     bool foundCard = false;         //Boolean type variable to check card is found or not
@@ -141,7 +141,7 @@ namespace DurakCardLibrary
                     while (foundCard == false)
                     {
                         //Generate number b/w 1 to 20
-                        sourceCard = sourceGen.Next((int)DeckSize.DeckSize20);
+                        sourceCard = sourceGen.Next((int)DeckSizeEnum.DeckSize20);
                         if (assigned[sourceCard] == false)        //if assigned card is not true(present)
                             foundCard = true;                   //set to foundCard true
                     }
@@ -150,14 +150,14 @@ namespace DurakCardLibrary
                 }
                 newDeck.CopyTo(cards);                      //Copy the array to newDeck
             }
-            else if(deckSize == (int)DeckSize.DeckSizeDefault)
+            else if(deckSize == (int)DeckSizeEnum.DeckSizeDefault)
             {
                 Cards newDeck = new Cards();
-                bool[] assigned = new bool[(int)DeckSize.DeckSizeDefault];         //Array of bool to check card already assigned or not
+                bool[] assigned = new bool[(int)DeckSizeEnum.DeckSizeDefault];         //Array of bool to check card already assigned or not
                 Random sourceGen = new Random();        //Instance to generate random number
 
                 //for loop to go through all cards 
-                for (int i = 0; i < (int)DeckSize.DeckSizeDefault; i++)
+                for (int i = 0; i < (int)DeckSizeEnum.DeckSizeDefault; i++)
                 {
                     int sourceCard = 0;
                     bool foundCard = false;         //Boolean type variable to check card is found or not
@@ -166,7 +166,7 @@ namespace DurakCardLibrary
                     while (foundCard == false)
                     {
                         //Generate number b/w 1 to 36
-                        sourceCard = sourceGen.Next((int)DeckSize.DeckSizeDefault);
+                        sourceCard = sourceGen.Next((int)DeckSizeEnum.DeckSizeDefault);
                         if (assigned[sourceCard] == false)        //if assigned card is not true(present)
                             foundCard = true;                   //set to foundCard true
                     }
@@ -175,14 +175,14 @@ namespace DurakCardLibrary
                 }
                 newDeck.CopyTo(cards);                      //Copy the array to newDeck
             }
-            else if (deckSize == (int)DeckSize.DeckSizeFull)
+            else if (deckSize == (int)DeckSizeEnum.DeckSizeFull)
             {
                 Cards newDeck = new Cards();
-                bool[] assigned = new bool[(int)DeckSize.DeckSizeFull];         //Array of bool to check card already assigned or not
+                bool[] assigned = new bool[(int)DeckSizeEnum.DeckSizeFull];         //Array of bool to check card already assigned or not
                 Random sourceGen = new Random();        //Instance to generate random number
 
                 //for loop to go through all cards 
-                for (int i = 0; i < (int)DeckSize.DeckSizeFull; i++)
+                for (int i = 0; i < (int)DeckSizeEnum.DeckSizeFull; i++)
                 {
                     int sourceCard = 0;
                     bool foundCard = false;         //Boolean type variable to check card is found or not
@@ -191,7 +191,7 @@ namespace DurakCardLibrary
                     while (foundCard == false)
                     {
                         //Generate number b/w 1 to 52
-                        sourceCard = sourceGen.Next((int)DeckSize.DeckSizeFull);
+                        sourceCard = sourceGen.Next((int)DeckSizeEnum.DeckSizeFull);
                         if (assigned[sourceCard] == false)        //if assigned card is not true(present)
                             foundCard = true;                   //set to foundCard true
                     }
@@ -221,5 +221,31 @@ namespace DurakCardLibrary
         {
             return cards.Count; 
         }
-	}
+
+        public Card removeCard()
+        {
+            Card myCard = new Card();
+            if(cards != null)
+            {
+                myCard = cards[0];
+                cards.RemoveAt(0);
+            }
+
+            return myCard;
+        }
+
+        public Cards removeCards(int totalCards)
+        {
+            Cards myCards = new Cards();
+
+            for (int i = 0; i < totalCards; i++)
+            {
+                myCards.Add(cards[0]);
+                cards.RemoveAt(0);
+            }
+
+            return myCards;
+        }
+
+    }
 }

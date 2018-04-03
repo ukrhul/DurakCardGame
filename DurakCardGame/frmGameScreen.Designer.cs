@@ -198,7 +198,7 @@
             // lblDeckCounter
             // 
             this.lblDeckCounter.AutoSize = true;
-            this.lblDeckCounter.Location = new System.Drawing.Point(66, 200);
+            this.lblDeckCounter.Location = new System.Drawing.Point(70, 205);
             this.lblDeckCounter.Name = "lblDeckCounter";
             this.lblDeckCounter.Size = new System.Drawing.Size(41, 33);
             this.lblDeckCounter.TabIndex = 1;

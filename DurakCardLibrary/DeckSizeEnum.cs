@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DurakCardLibrary
 {
-    public enum DeckSize
+    public enum DeckSizeEnum
     {
         DeckSize20 = 20,
         DeckSizeDefault = 36,
