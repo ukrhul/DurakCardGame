@@ -6,9 +6,10 @@ namespace DurakCardGame
 {
     public class DurakPlayer : Player
     {
-   
-        private PlayerHand playerHand = new PlayerHand();
+
         Cards cards = new Cards();
+
+        protected PlayerHand playerHand;
 
         public PlayerHand PlayerHand
         {
@@ -38,7 +39,7 @@ namespace DurakCardGame
 
         public void RefillHand(Deck durakDeck)
         {
-            cards = durakDeck.removeCards(6 - playerHand.totalCards());
+            cards = durakDeck.removeCards(6);
             playerHand.addCards(cards);
         }
 

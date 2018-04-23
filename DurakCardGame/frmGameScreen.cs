@@ -4,6 +4,7 @@ using DurakCardLibrary;
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace DurakCardGame
@@ -13,6 +14,15 @@ namespace DurakCardGame
        // int deckSize = 36;
         Deck durakDeck = new Deck();
         CardBoxComponent cbxCards;
+        static PlayerHand playerHandAi = new PlayerHand();
+        static PlayerHand playerHandHuman = new PlayerHand();
+        PlayingField playingField = new PlayingField();
+        PlayerAI playerAi = new PlayerAI();
+        DurakPlayer durakAi = new DurakPlayer("Rahul", playerHandAi, false);
+        DurakPlayer durakHuman = new DurakPlayer("Rahul", playerHandHuman, false);
+
+        private Image audioFull;
+        private Image audioMute;
 
         public frmGameScreen()
         {
@@ -24,11 +34,20 @@ namespace DurakCardGame
        public void setDefault(int deckSize)
         {
             Deck durakDeck = new Deck(deckSize);
+
             durakDeck.Shuffle(deckSize);
-            createDeck(durakDeck);
+
+            
+
             createPlayersHand(durakDeck);
+
             grpBxDeck.Controls.Clear();
+
             createDeck(durakDeck);
+
+            displayPlayingCard();
+            displayAiHand();
+            displayHumanHand();
             //lblDeckCounter.Text = durakDeck.remainingCard().ToString();
         }
 
@@ -43,7 +62,7 @@ namespace DurakCardGame
                 cbxCards.Top = 12;
                 cbxCards.Height = 60;
                 cbxCards.Width = 40;
-                //cbxCards.FaceUp = FaceStatus.Up;
+                cbxCards.FaceUp = FaceStatus.Down;
                 grpBxDeck.Controls.Add(cbxCards);
             }
             Label lblDeckCounter = new Label();
@@ -63,46 +82,130 @@ namespace DurakCardGame
 
         }
 
-        public void createPlayersHand(Deck durakDeck)
+        public void displayAiHand()
         {
+            grpBxAi.Controls.Clear();
 
-            PlayerHand playerHand = new PlayerHand();
-            DurakPlayer durakPlayer1 = new DurakPlayer("Rahul", playerHand, false);
-
-            durakPlayer1.RefillHand(durakDeck);
-            
-            grpBxPlayer1.Controls.Clear();
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < playerHandAi.totalCards(); i++)
             {
-                CardBoxComponent cbxCards1 = new CardBoxComponent();
-                cbxCards1.Card = durakPlayer1.GetCard(i);
-                cbxCards1.Left = 5 + (i * 10);
-                cbxCards1.Top = 12;
-                cbxCards1.Height = 60;
-                cbxCards1.Width = 40;
-               // cbxCards.FaceUp = FaceStatus.Up;
-                grpBxPlayer1.Controls.Add(cbxCards1);
-                
+                cbxCards = new CardBoxComponent();
+                cbxCards.Card = durakAi.GetCard(i);
+                cbxCards.Left = 5 + (i * 20);
+                cbxCards.Top = 12;
+                cbxCards.Height = 60;
+                cbxCards.Width = 40;
+                cbxCards.FaceUp = FaceStatus.Up;
+                grpBxAi.Controls.Add(cbxCards);
+
             }
 
-            Label lblPlayerCounter = new Label();
-            lblPlayerCounter.Top = 180;
-            lblPlayerCounter.Left = 50;
-            lblPlayerCounter.Text = durakPlayer1.totalCards().ToString();
-            grpBxPlayer1.Controls.Add(lblPlayerCounter);
-
-
         }
 
-        private void frmGameScreen_Load(object sender, EventArgs e)
+        public void displayHumanHand()
+        {
+            grpBxHuman.Controls.Clear();
+
+            for (int i = 0; i < playerHandHuman.totalCards(); i++)
+            {
+                cbxCards = new CardBoxComponent();
+                cbxCards.Card = durakHuman.GetCard(i);
+                cbxCards.Left = 5 + (i * 20);
+                cbxCards.Top = 12;
+                cbxCards.Height = 60;
+                cbxCards.Width = 40;
+                cbxCards.FaceUp = FaceStatus.Up;
+                grpBxHuman.Controls.Add(cbxCards);
+                cbxCards.cardClicked += new EventHandler(Card_Click);
+
+            }
+        }
+
+        public void createPlayersHand(Deck durakDeck)
         {
             
+            durakAi.RefillHand(durakDeck);
+            durakHuman.RefillHand(durakDeck);
+            cbxTrumpCard.Card = durakAi.GetCard(5);
         }
+
+        public void displayPlayingCard()
+        {
+
+            grpBxPlayingField.Controls.Clear();
+
+            for (int i = 0; i < playingField.totalCards(); i++)
+            {
+                cbxCards = new CardBoxComponent();
+                cbxCards.Card = playingField.GetCard(i);
+                cbxCards.Left = 5 + (i * 45);
+                cbxCards.Top = 20;
+                cbxCards.Height = 60;
+                cbxCards.Width = 40;
+                cbxCards.FaceUp = FaceStatus.Up;
+                grpBxPlayingField.Controls.Add(cbxCards);
+
+            }
+
+        }
+
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmHelpForm helpForm = new frmHelpForm();
             helpForm.ShowDialog();
+        }
+
+        private void frmGameScreen_Load(object sender, EventArgs e)
+        {
+            audioFull = Properties.Resources.Status_audio_volume_high_icon;
+            audioMute = Properties.Resources.Status_audio_volume_muted_icon;
+            pbxSound.Image = audioFull;
+            playSound();
+        }
+
+        private void playSound()
+        {
+            SoundPlayer cardShuffleSound = new SoundPlayer( Properties.Resources.Cards_Shuffling);
+            cardShuffleSound.Play();
+        }
+
+        private void pbxSound_Click(object sender, EventArgs e)
+        {
+            changeImage();
+        }
+
+
+        private void changeImage()
+        {
+
+            if (pbxSound.Image == audioFull)
+            {
+                pbxSound.Image = audioMute;
+            }
+            else
+            {
+                pbxSound.Image = audioFull;
+
+            }
+
+        }
+
+        private void Card_Click(object sender, EventArgs e)
+        {
+
+            cbxCards = (CardBoxComponent)sender;
+            
+            playingField.addCard(cbxCards.Card);
+
+            if (playerAi.aiAttack(cbxCards.Card, playerHandAi, playingField))
+            {
+                btnAction.Text = "Discard";
+            }
+
+            displayPlayingCard();
+            displayAiHand();
+            displayHumanHand();
+            
         }
     }
 }

@@ -17,12 +17,15 @@ using System;
 using DurakCardLibrary;
 using System.Windows.Forms;
 using DurakCardGame;
+using System.Media;
 
 namespace CardBox
 {
     public partial class CardBoxComponent : UserControl
     {
 
+        public event EventHandler cardClicked;
+                
         #region " --- Property Procedures ---"
         private Card myCard;       //Variable of type card to set the card details
 
@@ -44,10 +47,10 @@ namespace CardBox
         /// </summary>
         public Suit Suit
         {
-            get { return Card.suit; }
+            get { return Card.Suit; }
             set
             {
-                Card.suit = value;   
+                Card.Suit = value;   
                 updateCardImage();   // Update the image of card
             }
         }
@@ -57,10 +60,10 @@ namespace CardBox
         /// </summary>
         public Rank Rank
         {
-            get { return Card.rank; }
+            get { return Card.Rank; }
             set
             {
-                Card.rank = value;
+                Card.Rank = value;
                 updateCardImage();   // Update the image of card
             }
         }
@@ -70,13 +73,15 @@ namespace CardBox
         /// </summary>
         public FaceStatus FaceUp
         {
-            get { return Card.isFaceUp; }
+            get { return Card.FaceUp; }
             set
             {
-                Card.isFaceUp = value;
+                Card.FaceUp = value;
                 updateCardImage();   // Update the image of card
             }
         }
+
+       
         #endregion
 
         #region " --- Constructors ---"
@@ -87,8 +92,8 @@ namespace CardBox
         {
             InitializeComponent();   // Initialise the card box components
             myCard = new Card();     // Instance of card
-            myCard.suit = Suit.Clubs;
-            myCard.rank = Rank.Ace;
+            myCard.Suit = Suit.Clubs;
+            myCard.Rank = Rank.Ace;
         }
         #endregion
 
@@ -125,5 +130,24 @@ namespace CardBox
             updateCardImage();      //Call the updateCardImage method
         }
         #endregion
+
+        private void pbCardImage_Click(object sender, EventArgs e)
+        {
+            OnCardClick(EventArgs.Empty);
+            cardClickSound();
+        }
+
+        protected virtual void OnCardClick(EventArgs e)
+        {
+            if (cardClicked != null)
+                cardClicked(this, e);
+        }
+
+        private void cardClickSound()
+        {
+            SoundPlayer clickSound = new SoundPlayer(Properties.Resources.CardClicked);
+            clickSound.Play();
+        }
+
     }
 }

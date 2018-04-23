@@ -28,25 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DurakCardLibrary.Card card1 = new DurakCardLibrary.Card();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGameScreen));
             this.grpBxPlayingField = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.grpBxPlayer1 = new System.Windows.Forms.GroupBox();
-            this.grpBxPlayer2 = new System.Windows.Forms.GroupBox();
-            this.grpBxPlayer3 = new System.Windows.Forms.GroupBox();
-            this.grpBxPlayer4 = new System.Windows.Forms.GroupBox();
-            this.grpBxPlayer5 = new System.Windows.Forms.GroupBox();
+            this.btnAction = new System.Windows.Forms.Button();
+            this.grpBxAi = new System.Windows.Forms.GroupBox();
             this.grpBxHuman = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.grbBxPlayer5 = new System.Windows.Forms.GroupBox();
             this.lblDeckCounter = new System.Windows.Forms.Label();
             this.grpBxDeck = new System.Windows.Forms.GroupBox();
+            this.pbxSound = new System.Windows.Forms.PictureBox();
+            this.cbxTrumpCard = new CardBox.CardBoxComponent();
             this.menuStrip1.SuspendLayout();
             this.grpBxDeck.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSound)).BeginInit();
             this.SuspendLayout();
             // 
             // grpBxPlayingField
@@ -62,82 +61,30 @@
             this.grpBxPlayingField.TabStop = false;
             this.grpBxPlayingField.Text = "Playing Field";
             // 
-            // button1
+            // btnAction
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(1082, 376);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 58);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "DEFAUlT";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAction.BackColor = System.Drawing.Color.Black;
+            this.btnAction.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAction.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAction.Location = new System.Drawing.Point(1082, 376);
+            this.btnAction.Name = "btnAction";
+            this.btnAction.Size = new System.Drawing.Size(136, 58);
+            this.btnAction.TabIndex = 4;
+            this.btnAction.Text = "DEFAUlT";
+            this.btnAction.UseVisualStyleBackColor = false;
             // 
-            // grpBxPlayer1
+            // grpBxAi
             // 
-            this.grpBxPlayer1.BackColor = System.Drawing.Color.Transparent;
-            this.grpBxPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.grpBxPlayer1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpBxPlayer1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpBxPlayer1.Location = new System.Drawing.Point(12, 36);
-            this.grpBxPlayer1.Name = "grpBxPlayer1";
-            this.grpBxPlayer1.Size = new System.Drawing.Size(187, 214);
-            this.grpBxPlayer1.TabIndex = 3;
-            this.grpBxPlayer1.TabStop = false;
-            this.grpBxPlayer1.Text = "Player 1";
-            // 
-            // grpBxPlayer2
-            // 
-            this.grpBxPlayer2.BackColor = System.Drawing.Color.Transparent;
-            this.grpBxPlayer2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.grpBxPlayer2.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpBxPlayer2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpBxPlayer2.Location = new System.Drawing.Point(218, 36);
-            this.grpBxPlayer2.Name = "grpBxPlayer2";
-            this.grpBxPlayer2.Size = new System.Drawing.Size(187, 214);
-            this.grpBxPlayer2.TabIndex = 4;
-            this.grpBxPlayer2.TabStop = false;
-            this.grpBxPlayer2.Text = "Player 2";
-            // 
-            // grpBxPlayer3
-            // 
-            this.grpBxPlayer3.BackColor = System.Drawing.Color.Transparent;
-            this.grpBxPlayer3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.grpBxPlayer3.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpBxPlayer3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpBxPlayer3.Location = new System.Drawing.Point(414, 36);
-            this.grpBxPlayer3.Name = "grpBxPlayer3";
-            this.grpBxPlayer3.Size = new System.Drawing.Size(187, 214);
-            this.grpBxPlayer3.TabIndex = 4;
-            this.grpBxPlayer3.TabStop = false;
-            this.grpBxPlayer3.Text = "Player 3";
-            // 
-            // grpBxPlayer4
-            // 
-            this.grpBxPlayer4.BackColor = System.Drawing.Color.Transparent;
-            this.grpBxPlayer4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.grpBxPlayer4.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpBxPlayer4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpBxPlayer4.Location = new System.Drawing.Point(618, 36);
-            this.grpBxPlayer4.Name = "grpBxPlayer4";
-            this.grpBxPlayer4.Size = new System.Drawing.Size(187, 214);
-            this.grpBxPlayer4.TabIndex = 4;
-            this.grpBxPlayer4.TabStop = false;
-            this.grpBxPlayer4.Text = "Player 4";
-            // 
-            // grpBxPlayer5
-            // 
-            this.grpBxPlayer5.BackColor = System.Drawing.Color.Transparent;
-            this.grpBxPlayer5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.grpBxPlayer5.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpBxPlayer5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpBxPlayer5.Location = new System.Drawing.Point(823, 36);
-            this.grpBxPlayer5.Name = "grpBxPlayer5";
-            this.grpBxPlayer5.Size = new System.Drawing.Size(187, 214);
-            this.grpBxPlayer5.TabIndex = 4;
-            this.grpBxPlayer5.TabStop = false;
-            this.grpBxPlayer5.Text = "Player 5";
+            this.grpBxAi.BackColor = System.Drawing.Color.Transparent;
+            this.grpBxAi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grpBxAi.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpBxAi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grpBxAi.Location = new System.Drawing.Point(214, 50);
+            this.grpBxAi.Name = "grpBxAi";
+            this.grpBxAi.Size = new System.Drawing.Size(852, 214);
+            this.grpBxAi.TabIndex = 3;
+            this.grpBxAi.TabStop = false;
+            this.grpBxAi.Text = "AI";
             // 
             // grpBxHuman
             // 
@@ -147,6 +94,7 @@
             this.grpBxHuman.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grpBxHuman.Location = new System.Drawing.Point(218, 531);
             this.grpBxHuman.Name = "grpBxHuman";
+            this.grpBxHuman.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.grpBxHuman.Size = new System.Drawing.Size(838, 192);
             this.grpBxHuman.TabIndex = 4;
             this.grpBxHuman.TabStop = false;
@@ -188,22 +136,9 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
-            // 
-            // grbBxPlayer5
-            // 
-            this.grbBxPlayer5.BackColor = System.Drawing.Color.Transparent;
-            this.grbBxPlayer5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.grbBxPlayer5.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbBxPlayer5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grbBxPlayer5.Location = new System.Drawing.Point(1031, 36);
-            this.grbBxPlayer5.Name = "grbBxPlayer5";
-            this.grbBxPlayer5.Size = new System.Drawing.Size(187, 214);
-            this.grbBxPlayer5.TabIndex = 5;
-            this.grbBxPlayer5.TabStop = false;
-            this.grbBxPlayer5.Text = "Player 5";
             // 
             // lblDeckCounter
             // 
@@ -228,26 +163,51 @@
             this.grpBxDeck.TabStop = false;
             this.grpBxDeck.Text = "Deck";
             // 
+            // pbxSound
+            // 
+            this.pbxSound.BackColor = System.Drawing.Color.Transparent;
+            this.pbxSound.Location = new System.Drawing.Point(1122, 77);
+            this.pbxSound.Name = "pbxSound";
+            this.pbxSound.Size = new System.Drawing.Size(66, 61);
+            this.pbxSound.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxSound.TabIndex = 7;
+            this.pbxSound.TabStop = false;
+            this.pbxSound.Click += new System.EventHandler(this.pbxSound_Click);
+            // 
+            // cbxTrumpCard
+            // 
+            card1.CardValue = 0;
+            card1.FaceUp = DurakCardLibrary.FaceStatus.Up;
+            card1.Rank = DurakCardLibrary.Rank.Ace;
+            card1.Suit = DurakCardGame.Suit.Clubs;
+            this.cbxTrumpCard.Card = card1;
+            this.cbxTrumpCard.FaceUp = DurakCardLibrary.FaceStatus.Up;
+            this.cbxTrumpCard.Location = new System.Drawing.Point(39, 549);
+            this.cbxTrumpCard.Name = "cbxTrumpCard";
+            this.cbxTrumpCard.Rank = DurakCardLibrary.Rank.Ace;
+            this.cbxTrumpCard.Size = new System.Drawing.Size(100, 150);
+            this.cbxTrumpCard.Suit = DurakCardGame.Suit.Clubs;
+            this.cbxTrumpCard.TabIndex = 6;
+            // 
             // frmGameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DurakCardGame.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1245, 749);
-            this.Controls.Add(this.grbBxPlayer5);
+            this.Controls.Add(this.pbxSound);
+            this.Controls.Add(this.cbxTrumpCard);
             this.Controls.Add(this.grpBxDeck);
             this.Controls.Add(this.grpBxHuman);
-            this.Controls.Add(this.grpBxPlayer5);
-            this.Controls.Add(this.grpBxPlayer4);
-            this.Controls.Add(this.grpBxPlayer3);
-            this.Controls.Add(this.grpBxPlayer2);
-            this.Controls.Add(this.grpBxPlayer1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.grpBxAi);
+            this.Controls.Add(this.btnAction);
             this.Controls.Add(this.grpBxPlayingField);
             this.Controls.Add(this.menuStrip1);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmGameScreen";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Durak Game";
             this.Load += new System.EventHandler(this.frmGameScreen_Load);
@@ -255,6 +215,7 @@
             this.menuStrip1.PerformLayout();
             this.grpBxDeck.ResumeLayout(false);
             this.grpBxDeck.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSound)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,20 +224,17 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grpBxPlayingField;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox grpBxPlayer1;
-        private System.Windows.Forms.GroupBox grpBxPlayer2;
-        private System.Windows.Forms.GroupBox grpBxPlayer3;
-        private System.Windows.Forms.GroupBox grpBxPlayer4;
-        private System.Windows.Forms.GroupBox grpBxPlayer5;
+        private System.Windows.Forms.Button btnAction;
+        private System.Windows.Forms.GroupBox grpBxAi;
         private System.Windows.Forms.GroupBox grpBxHuman;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.GroupBox grbBxPlayer5;
         private System.Windows.Forms.Label lblDeckCounter;
         private System.Windows.Forms.GroupBox grpBxDeck;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private CardBox.CardBoxComponent cbxTrumpCard;
+        private System.Windows.Forms.PictureBox pbxSound;
     }
 }

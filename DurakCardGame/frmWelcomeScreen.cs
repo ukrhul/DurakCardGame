@@ -8,6 +8,9 @@ namespace DurakCardGame
     {
         frmGameScreen gmScreen = new frmGameScreen();
 
+        DeckSizeEnum deckSize = DeckSizeEnum.DeckSizeDefault;
+
+
         public frmDurakCardGame()
         {
             InitializeComponent();
@@ -21,7 +24,7 @@ namespace DurakCardGame
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-
+            gmScreen.setDefault((int)deckSize);
             gmScreen.Show();
             this.Hide();
         }
@@ -38,47 +41,24 @@ namespace DurakCardGame
         private void cbxDeckSize_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-
             if (cbxDeckSize.SelectedIndex == 0)
             {
-                gmScreen.setDefault((int)DeckSizeEnum.DeckSize20);
+                deckSize = DeckSizeEnum.DeckSize20;
             }
             else if(cbxDeckSize.SelectedIndex == 1)
             {
-                gmScreen.setDefault((int)DeckSizeEnum.DeckSizeDefault);
+                deckSize = DeckSizeEnum.DeckSizeDefault;
             }
             else if (cbxDeckSize.SelectedIndex == 2)
             {
-                gmScreen.setDefault((int)DeckSizeEnum.DeckSizeFull);
+                deckSize = DeckSizeEnum.DeckSizeDefault;
             }
 
         }
 
         private void nudPlayer_ValueChanged(object sender, EventArgs e)
         {
-            int numberOfPlayers = (int)nudPlayer.Value;
-            switch(numberOfPlayers)
-            {
-                case 1:
-                    
-                    break;
-
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                case 5:
-
-                    break;
-                case 6:
-
-                    break;
-            }
+           
         }
     }
 }

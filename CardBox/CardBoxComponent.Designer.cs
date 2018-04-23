@@ -34,6 +34,7 @@
             // 
             // pbCardImage
             // 
+            this.pbCardImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCardImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbCardImage.Location = new System.Drawing.Point(0, 0);
             this.pbCardImage.Name = "pbCardImage";
@@ -41,13 +42,14 @@
             this.pbCardImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCardImage.TabIndex = 0;
             this.pbCardImage.TabStop = false;
+            this.pbCardImage.Click += new System.EventHandler(this.pbCardImage_Click);
             // 
-            // CardBox
+            // CardBoxComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pbCardImage);
-            this.Name = "CardBox";
+            this.Name = "CardBoxComponent";
             this.Size = new System.Drawing.Size(100, 150);
             this.Load += new System.EventHandler(this.CardBox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCardImage)).EndInit();

@@ -9,10 +9,34 @@ namespace DurakCardLibrary
         /// <summary>
         /// Variables of type enumeration
         /// </summary>
-        public Rank rank;          //Variable to store the rank of card
-        public Suit suit;          //Variable to store the suit of card
-        public FaceStatus isFaceUp;
+        protected Rank myRank;          //Variable to store the rank of card
+        public Rank Rank
+        {
+            get { return myRank; }
+            set { myRank = value; }
+        }
 
+
+        protected Suit mySuit;          //Variable to store the suit of card
+        public Suit Suit
+        {
+            get { return mySuit; }
+            set { mySuit = value; }
+        }
+
+        protected int myValue;
+        public int CardValue
+        {
+            get { return myValue; }
+            set { myValue = value; }
+        }
+
+        protected FaceStatus isFaceUp;
+        public FaceStatus FaceUp
+        {
+            get { return isFaceUp; }
+            set { isFaceUp = value; }
+        }
         /// <summary>
         /// Flag for trump usage. If true, trumps are valued higher
         /// than cards of other suits.
@@ -43,8 +67,9 @@ namespace DurakCardLibrary
         /// <param name="newRank">Variable to store rank as type Rank enumeration</param>
         public Card(Suit newSuit, Rank newRank)
         {
-            suit = newSuit;             //Assign newSuit to Suit 
-            rank = newRank;             //Assign newRank to Rank
+            mySuit = newSuit;             //Assign newSuit to Suit 
+            myRank = newRank;             //Assign newRank to Rank
+            this.myValue = (int)newRank;
         }
         #endregion
 
@@ -57,7 +82,7 @@ namespace DurakCardLibrary
         public override string ToString()
         {
             //Return the string in below format
-            return "The " + rank + " of " + suit;
+            return "The " + myRank + " of " + mySuit;
         }
 
         /// <summary>
@@ -74,21 +99,21 @@ namespace DurakCardLibrary
             if (isFaceUp == FaceStatus.Up)
             {
                 //if card is a face card
-                if (rank == Rank.Ace || rank == Rank.Jack || rank == Rank.Queen
-                    || rank == Rank.King)
+                if (myRank == Rank.Ace || myRank == Rank.Jack || myRank == Rank.Queen
+                    || myRank == Rank.King)
                 {
                     // Take first letter of rank and suit and 
                     // combine it to make imageName
-                    string rankLetter = rank.ToString().Substring(0, 1);
-                    string suitLetter = suit.ToString().Substring(0, 1);
+                    string rankLetter = myRank.ToString().Substring(0, 1);
+                    string suitLetter = mySuit.ToString().Substring(0, 1);
                     imageName = rankLetter + suitLetter;
                 }
                 else   //otherwise
                 {
                     // Take the rank value and suit first letter
                     // to make the imageName
-                    string tempLetter = suit.ToString().Substring(0, 1);
-                    imageName = "_" + (int)rank + tempLetter;
+                    string tempLetter = mySuit.ToString().Substring(0, 1);
+                    imageName = "_" + (int)myRank + tempLetter;
                 }
             }
             else
@@ -124,7 +149,8 @@ namespace DurakCardLibrary
         /// <returns>boolean value</returns>
         public static bool operator ==(Card card1, Card card2)
         {
-            return (card1.suit == card2.suit) && (card1.rank == card2.rank);
+
+            return (card1.mySuit == card2.mySuit) && (card1.myRank == card2.myRank);
         }
 
         /// <summary>
@@ -155,7 +181,7 @@ namespace DurakCardLibrary
         /// <returns>integer value</returns>
         public override int GetHashCode()
         {
-            return 13 * (int)suit + (int)rank;
+            return 13 * (int)mySuit + (int)myRank;
         }
 
         /// <summary>
@@ -167,15 +193,15 @@ namespace DurakCardLibrary
         public static bool operator >(Card card1, Card card2)
         {
             // if card1 suit is equal to card 2
-            if (card1.suit == card2.suit)
+            if (card1.mySuit == card2.mySuit)
             {
                 if (isAceHigh)      // if Ace is high
                 {
                     // if card1 rank is Ace
-                    if (card1.rank == Rank.Ace)
+                    if (card1.myRank == Rank.Ace)
                     {
                         // if card2 rank is Ace
-                        if (card2.rank == Rank.Ace)
+                        if (card2.myRank == Rank.Ace)
                             return false;       //return false
                         else
                             return true;        //return true
@@ -183,21 +209,21 @@ namespace DurakCardLibrary
                     else  //otherwise
                     {
                         // if card2 rank is Ace
-                        if (card2.rank == Rank.Ace)
+                        if (card2.myRank == Rank.Ace)
                             return false;       //return false
                         else
-                            return (card1.rank > card2.rank);   //rank of card1 is greater than rank of card2 
+                            return (card1.myRank > card2.myRank);   //rank of card1 is greater than rank of card2 
                     }
                 }
                 else  //otherwise
                 {
-                    return (card1.rank > card2.rank);  //rank of card1 is greater than rank of card2 
+                    return (card1.myRank > card2.myRank);  //rank of card1 is greater than rank of card2 
                 }
             }
             else  //otherwise
             {
                 //if card is trumo and using trump
-                if (useTrumps && (card2.suit == Card.trump))
+                if (useTrumps && (card2.mySuit == Card.trump))
                     return false;       //return false
                 else
                     return true;        //return true
@@ -224,34 +250,34 @@ namespace DurakCardLibrary
         public static bool operator >=(Card card1, Card card2)
         {
             // if suit of card1 == suit of card2
-            if (card1.suit == card2.suit)
+            if (card1.mySuit == card2.mySuit)
             {
                 // if Ace is set as high
                 if (isAceHigh)
                 {
                     // if card1 rank is Ace
-                    if (card1.rank == Rank.Ace)
+                    if (card1.myRank == Rank.Ace)
                     {
                         return true;        //return true
                     }
                     else    //otherwise
                     {
                         // if card2 rank is Ace
-                        if (card2.rank == Rank.Ace)
+                        if (card2.myRank == Rank.Ace)
                             return false;       //return false
                         else
-                            return (card1.rank >= card2.rank);      //rank of card1 is >= rank of card2
+                            return (card1.myRank >= card2.myRank);      //rank of card1 is >= rank of card2
                     }
                 }
                 else  //otherwise
                 {
-                    return (card1.rank >= card2.rank);  //rank of card1 is >= rank of card2
+                    return (card1.myRank >= card2.myRank);  //rank of card1 is >= rank of card2
                 }
             }
             else   //otherwise
             {
                 //if useTrumps is true and card2 is a trump
-                if (useTrumps && (card2.suit == Card.trump))
+                if (useTrumps && (card2.mySuit == Card.trump))
                     return false;       //return false
                 else
                     return true;        //return true
