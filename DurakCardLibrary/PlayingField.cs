@@ -23,8 +23,7 @@ namespace DurakCardLibrary
 
         public object Clone()
         {
-            //GameLogic newGameRiver = new GameLogic(playingFieldCard.Clone() as Cards);
-            //return newGameRiver;
+           
             return ((ICloneable)playingFieldCard).Clone();
         }
 
@@ -39,7 +38,15 @@ namespace DurakCardLibrary
         {
             playingFieldCard.Clear();
         }
-      
+
+        public void removeCards(Cards cards)
+        {
+            for (int i = 0; i < cards.Count(); i++)
+            {
+                playingFieldCard.Remove(cards[i]);
+            }
+        }
+
         public int totalCards()
         {
             return playingFieldCard.Count();
@@ -62,18 +69,5 @@ namespace DurakCardLibrary
         }
         #endregion
 
-        //public bool compareCard(Card trumpCard)
-        //{
-        //    bool isDefended = false;
-
-        //    for(int i = 0; i < playingFieldCard.Count(); i++)
-        //    {
-        //        if(playingFieldCard[i].GetHashCode() > )
-
-
-        //    }
-
-        //    return isDefended;
-        //}
     }
 }

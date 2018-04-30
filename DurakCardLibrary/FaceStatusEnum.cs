@@ -1,4 +1,12 @@
-﻿using System;
+﻿/** FaceStatusEnum.cs
+*	
+*	This is the face status enumeration class
+*	that contains the face status of card
+*   
+*	Author		  Rahul, Jaspreet Kaur, Remya Zacharias
+*	Since		  1.0 (25 March 2018)
+*	Version       2.0 (27 April 2018)
+*/
 
 namespace DurakCardLibrary
 {

@@ -1,5 +1,14 @@
-﻿using CardBox;
-using DurakCardGame;
+﻿/** frmGameScreen.cs
+*	
+*	This is the Main game screen form class
+*	that contains all the class instances and 
+*	gameplay
+*   
+*	Author		  Rahul, Jaspreet Kaur, Remya Zacharias
+*	Since		  1.0 (25 March 2018)
+*	Version       2.0 (27 April 2018)
+*/
+using CardBox;
 using DurakCardLibrary;
 using System;
 using System.Diagnostics;
@@ -11,7 +20,6 @@ namespace DurakCardGame
 {
     public partial class frmGameScreen : Form
     {
-       // int deckSize = 36;
         Deck durakDeck = new Deck();
         CardBoxComponent cbxCards;
         static PlayerHand playerHandAi = new PlayerHand();
@@ -27,31 +35,26 @@ namespace DurakCardGame
         public frmGameScreen()
         {
             InitializeComponent();
-           // setDefault();
             
         }
 
        public void setDefault(int deckSize)
         {
-            Deck durakDeck = new Deck(deckSize);
+            isHumanTurn = true;
+            durakDeck = new Deck(deckSize);
 
             durakDeck.Shuffle(deckSize);
-
-            
-
             createPlayersHand(durakDeck);
 
             grpBxDeck.Controls.Clear();
-
-            createDeck(durakDeck);
+            displayDeck();            
 
             displayPlayingCard();
             displayAiHand();
             displayHumanHand();
-            //lblDeckCounter.Text = durakDeck.remainingCard().ToString();
         }
 
-        public void createDeck(Deck durakDeck)
+        public void displayDeck()
         {
             grpBxDeck.Controls.Clear();
             for (int i = 0; i < durakDeck.remainingCard(); i++)
@@ -62,7 +65,7 @@ namespace DurakCardGame
                 cbxCards.Top = 12;
                 cbxCards.Height = 60;
                 cbxCards.Width = 40;
-                cbxCards.FaceUp = FaceStatus.Down;
+                cbxCards.FaceUp = FaceStatus.Up;
                 grpBxDeck.Controls.Add(cbxCards);
             }
             Label lblDeckCounter = new Label();
@@ -116,16 +119,14 @@ namespace DurakCardGame
                 cbxCards.FaceUp = FaceStatus.Up;
                 grpBxHuman.Controls.Add(cbxCards);
                 cbxCards.cardClicked += new EventHandler(Card_Click);
-
             }
         }
 
         public void createPlayersHand(Deck durakDeck)
         {
-            
-            durakAi.RefillHand(durakDeck);
-            durakHuman.RefillHand(durakDeck);
-            cbxTrumpCard.Card = durakAi.GetCard(5);
+            refillCards();
+            Card.trump = durakDeck.GetCard(5).Suit;
+            cbxTrumpCard.Card = durakDeck.GetCard(5);
         }
 
         public void displayPlayingCard()
@@ -145,6 +146,7 @@ namespace DurakCardGame
                 grpBxPlayingField.Controls.Add(cbxCards);
 
             }
+
 
         }
 
@@ -192,20 +194,118 @@ namespace DurakCardGame
 
         private void Card_Click(object sender, EventArgs e)
         {
-
+           
             cbxCards = (CardBoxComponent)sender;
+            Card humanDefendCard = cbxCards.Card;
             
-            playingField.addCard(cbxCards.Card);
-
-            if (playerAi.aiAttack(cbxCards.Card, playerHandAi, playingField))
+            if(humanAttackTurn() == false)
             {
-                btnAction.Text = "Discard";
+                if(humanDefend(humanDefendCard))
+                {
+                    btnAction.Text = "...";
+                    btnAction.Enabled = false;
+                    playingField.clearPlayingField();
+                    txtMoves.Text = "Ai Discarded cards";
+                    isHumanTurn = true;
+                    isHumanAttacking = true;
+                }
+
+                whoWin();
+                
+
+                displayPlayingCard();
+                displayAiHand();
+                displayHumanHand();
+                displayDeck();
+                refillCards();
+                
+            }
+        }
+
+
+
+
+        private void btnAction_Click(object sender, EventArgs e)
+        {
+            if (btnAction.Text == "Discard")
+            {
+
+                playingField.clearPlayingField();
+                whoWin();
+                refillCards();
+                isHumanTurn = false;
+                aiAttackTurn();
+                
+
+
+            }
+            else if (btnAction.Text == "Take")
+            {
+                for (int i = 0; i < playingField.totalCards(); i++)
+                {
+                    playerHandHuman.addCard(playingField.GetCard(i));
+                    playingField.clearPlayingField();
+
+                }
+                whoWin();
+                refillCards();
+                isHumanTurn = false;
+                aiAttackTurn();
+                
+
+
             }
 
             displayPlayingCard();
             displayAiHand();
             displayHumanHand();
+            displayDeck();
+           
+        }
+
+        public void whoWin()
+        {
+            if (playerHandAi.totalCards() == 0)
+            {
+
+                if (MessageBox.Show("You Won the Game!! Ai Loose.", "You Won", MessageBoxButtons.OK) == DialogResult.OK)
+                {
+                    frmDurakCardGame frmMain = new frmDurakCardGame();
+
+                    frmMain.Show();
+                    this.Close();
+                    
+                    
+                }
+               
+
+            }
+
+            if (playerHandHuman.totalCards() == 0)
+            {
+
+                if(MessageBox.Show("You Won the Game!! Ai Loose.", "You Won", MessageBoxButtons.OK) == DialogResult.OK)
+                {
+                    frmDurakCardGame frmMain = new frmDurakCardGame();
+
+                    frmMain.Show();
+                    this.Close();
+                }
             
+            }
+        }
+
+        public void checkDeckEmpty()
+        {
+            if(durakDeck.remainingCard() == 0)
+            {
+                grpBxDeck.Controls.Clear();
+                Label newLabel = new Label();
+                newLabel.Top = 20;
+                newLabel.Left = 50;
+                newLabel.Text = "Keep It Up";
+                grpBxDeck.Controls.Add(newLabel);
+            }
         }
     }
 }

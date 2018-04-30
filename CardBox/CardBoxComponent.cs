@@ -6,9 +6,9 @@
 *   rank, suit and value
 *	of card 
 *   
-*	Author		  Rahul 
+*	Author		  Rahul, Jaspreet Kaur, Remya Zacharias
 *	Since		  1.0 (25 March 2018)
-*	Version       1.0 (25 March 2018)
+*	Version       2.0 (27 April 2018)
 *	Reference     I. (2018, January 30). CardBox Tutorial 1: Class Library Review (1 of 6).
 *	              Retrieved March 25, 2018,
 *	              from https://www.youtube.com/watch?v=xXohVJYKqjw&list=PLfNfAX7mRzNqDFJr-9UJZ6praJY10fXvY&index=2

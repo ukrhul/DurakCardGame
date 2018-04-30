@@ -42,6 +42,7 @@
             this.lblDeckCounter = new System.Windows.Forms.Label();
             this.grpBxDeck = new System.Windows.Forms.GroupBox();
             this.pbxSound = new System.Windows.Forms.PictureBox();
+            this.txtMoves = new System.Windows.Forms.TextBox();
             this.cbxTrumpCard = new CardBox.CardBoxComponent();
             this.menuStrip1.SuspendLayout();
             this.grpBxDeck.SuspendLayout();
@@ -54,7 +55,7 @@
             this.grpBxPlayingField.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.grpBxPlayingField.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBxPlayingField.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpBxPlayingField.Location = new System.Drawing.Point(218, 284);
+            this.grpBxPlayingField.Location = new System.Drawing.Point(218, 233);
             this.grpBxPlayingField.Name = "grpBxPlayingField";
             this.grpBxPlayingField.Size = new System.Drawing.Size(838, 241);
             this.grpBxPlayingField.TabIndex = 2;
@@ -70,8 +71,9 @@
             this.btnAction.Name = "btnAction";
             this.btnAction.Size = new System.Drawing.Size(136, 58);
             this.btnAction.TabIndex = 4;
-            this.btnAction.Text = "DEFAUlT";
+            this.btnAction.Text = "...";
             this.btnAction.UseVisualStyleBackColor = false;
+            this.btnAction.Click += new System.EventHandler(this.btnAction_Click);
             // 
             // grpBxAi
             // 
@@ -79,9 +81,9 @@
             this.grpBxAi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.grpBxAi.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBxAi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpBxAi.Location = new System.Drawing.Point(214, 50);
+            this.grpBxAi.Location = new System.Drawing.Point(218, 27);
             this.grpBxAi.Name = "grpBxAi";
-            this.grpBxAi.Size = new System.Drawing.Size(852, 214);
+            this.grpBxAi.Size = new System.Drawing.Size(838, 190);
             this.grpBxAi.TabIndex = 3;
             this.grpBxAi.TabStop = false;
             this.grpBxAi.Text = "AI";
@@ -92,10 +94,10 @@
             this.grpBxHuman.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.grpBxHuman.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBxHuman.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpBxHuman.Location = new System.Drawing.Point(218, 531);
+            this.grpBxHuman.Location = new System.Drawing.Point(218, 480);
             this.grpBxHuman.Name = "grpBxHuman";
             this.grpBxHuman.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.grpBxHuman.Size = new System.Drawing.Size(838, 192);
+            this.grpBxHuman.Size = new System.Drawing.Size(838, 185);
             this.grpBxHuman.TabIndex = 4;
             this.grpBxHuman.TabStop = false;
             this.grpBxHuman.Text = "You";
@@ -109,7 +111,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1245, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1235, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -156,9 +158,9 @@
             this.grpBxDeck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.grpBxDeck.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBxDeck.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpBxDeck.Location = new System.Drawing.Point(12, 284);
+            this.grpBxDeck.Location = new System.Drawing.Point(12, 27);
             this.grpBxDeck.Name = "grpBxDeck";
-            this.grpBxDeck.Size = new System.Drawing.Size(187, 241);
+            this.grpBxDeck.Size = new System.Drawing.Size(187, 251);
             this.grpBxDeck.TabIndex = 4;
             this.grpBxDeck.TabStop = false;
             this.grpBxDeck.Text = "Deck";
@@ -166,13 +168,23 @@
             // pbxSound
             // 
             this.pbxSound.BackColor = System.Drawing.Color.Transparent;
-            this.pbxSound.Location = new System.Drawing.Point(1122, 77);
+            this.pbxSound.Location = new System.Drawing.Point(1112, 264);
             this.pbxSound.Name = "pbxSound";
             this.pbxSound.Size = new System.Drawing.Size(66, 61);
             this.pbxSound.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSound.TabIndex = 7;
             this.pbxSound.TabStop = false;
             this.pbxSound.Click += new System.EventHandler(this.pbxSound_Click);
+            // 
+            // txtMoves
+            // 
+            this.txtMoves.Enabled = false;
+            this.txtMoves.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMoves.Location = new System.Drawing.Point(12, 496);
+            this.txtMoves.Multiline = true;
+            this.txtMoves.Name = "txtMoves";
+            this.txtMoves.Size = new System.Drawing.Size(187, 169);
+            this.txtMoves.TabIndex = 9;
             // 
             // cbxTrumpCard
             // 
@@ -182,7 +194,7 @@
             card1.Suit = DurakCardGame.Suit.Clubs;
             this.cbxTrumpCard.Card = card1;
             this.cbxTrumpCard.FaceUp = DurakCardLibrary.FaceStatus.Up;
-            this.cbxTrumpCard.Location = new System.Drawing.Point(39, 549);
+            this.cbxTrumpCard.Location = new System.Drawing.Point(46, 284);
             this.cbxTrumpCard.Name = "cbxTrumpCard";
             this.cbxTrumpCard.Rank = DurakCardLibrary.Rank.Ace;
             this.cbxTrumpCard.Size = new System.Drawing.Size(100, 150);
@@ -194,7 +206,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DurakCardGame.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(1245, 749);
+            this.ClientSize = new System.Drawing.Size(1235, 677);
+            this.Controls.Add(this.txtMoves);
             this.Controls.Add(this.pbxSound);
             this.Controls.Add(this.cbxTrumpCard);
             this.Controls.Add(this.grpBxDeck);
@@ -204,6 +217,7 @@
             this.Controls.Add(this.grpBxPlayingField);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmGameScreen";
@@ -236,5 +250,6 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private CardBox.CardBoxComponent cbxTrumpCard;
         private System.Windows.Forms.PictureBox pbxSound;
+        private System.Windows.Forms.TextBox txtMoves;
     }
 }

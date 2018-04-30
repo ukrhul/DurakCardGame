@@ -1,6 +1,13 @@
-﻿using CardBox;
+﻿/** DurakPlayer.cs
+*	
+*	This is the DurakPlayer class
+*	that represent the durak player
+*   
+*	Author		  Rahul, Jaspreet Kaur, Remya Zacharias
+*	Since		  1.0 (25 March 2018)
+*	Version       2.0 (27 April 2018)
+*/
 using DurakCardLibrary;
-using System;
 
 namespace DurakCardGame
 {
@@ -33,13 +40,13 @@ namespace DurakCardGame
         public DurakPlayer(string name, PlayerHand playerHand, bool isHuman)
         {
             playerName = name;
-            PlayerHand = playerHand;
+            this.playerHand = playerHand;
             IsHuman = isHuman;
         }
 
-        public void RefillHand(Deck durakDeck)
+        public void RefillHand(Deck durakDeck, PlayerHand currentPlayerHand)
         {
-            cards = durakDeck.removeCards(6);
+            cards = durakDeck.removeCards(6-currentPlayerHand.totalCards());
             playerHand.addCards(cards);
         }
 
@@ -56,12 +63,7 @@ namespace DurakCardGame
         /// <returns>return the value of card</returns>
         public Card GetCard(int cardNum)
         {
-            //if cardNum is in between 0 to 51
-            if (cardNum >= 0 && cardNum <= 51)
-                return cards[cardNum];          //return card
-            else   //Otherwise
-                   //Throw out of range exception
-                throw (new System.ArgumentOutOfRangeException("cardNum", cardNum, "Value must be between 0 and 51."));
+            return playerHand.GetCard(cardNum);          //return card
         }
         #endregion
 

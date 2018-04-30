@@ -59,9 +59,6 @@
     <Compile Include="RankEnum.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CardLibClassDiagram.cd" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

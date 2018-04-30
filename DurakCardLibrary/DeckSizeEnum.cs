@@ -1,8 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/** DeckSizeEnum.cs
+*	
+*	This is the deck size enumeration class
+*	that contains the deck size of card
+*   
+*	Author		  Rahul, Jaspreet Kaur, Remya Zacharias
+*	Since		  1.0 (25 March 2018)
+*	Version       2.0 (27 April 2018)
+*/
 
 namespace DurakCardLibrary
 {

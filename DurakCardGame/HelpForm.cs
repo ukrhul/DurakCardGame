@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/** HelpForm.cs
+*	
+*	This is the Help game screen form class
+*	that contains gamplay information
+*	
+*	Author		  Rahul, Jaspreet Kaur, Remya Zacharias
+*	Since		  1.0 (25 March 2018)
+*	Version       2.0 (27 April 2018)
+*/
 using System.Windows.Forms;
 
 namespace DurakCardGame

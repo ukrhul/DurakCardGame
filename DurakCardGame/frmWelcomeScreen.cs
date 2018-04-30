@@ -1,4 +1,13 @@
-﻿using System;
+﻿/** frmWelcomeScreen.cs
+*	
+*	This is the Welcome game screen form class
+*	that contains deck size setting of the game
+*   
+*	Author		  Rahul, Jaspreet Kaur, Remya Zacharias
+*	Since		  1.0 (25 March 2018)
+*	Version       2.0 (27 April 2018)
+*/
+using System;
 using System.Windows.Forms;
 using DurakCardLibrary;
 

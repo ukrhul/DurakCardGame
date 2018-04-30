@@ -1,9 +1,17 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿/** PlayerHand.cs
+*	
+*	This is the player hand class
+*	that contains the hand information
+*	of players
+*   
+*	Author		  Rahul, Jaspreet Kaur, Remya Zacharias
+*	Since		  1.0 (25 March 2018)
+*	Version       2.0 (27 April 2018)
+*/
+
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DurakCardLibrary
 {
@@ -13,7 +21,7 @@ namespace DurakCardLibrary
 
         public PlayerHand()
         {
-         //  playerHand = (Cards)playerHand.Clone();
+        
         }
 
         public PlayerHand(Cards playerCards)
@@ -73,7 +81,6 @@ namespace DurakCardLibrary
                    //Throw out of range exception
                 throw (new System.ArgumentOutOfRangeException("cardNum", cardNum, "Value must be between 0 and 51."));
         }
-
 
         #endregion
 

@@ -1,4 +1,14 @@
-﻿using DurakCardGame;
+﻿/** Card.cs
+*	
+*	This is the card class
+*	that contains card properties 
+*	and methods
+*   
+*	Author		  Rahul, Jaspreet Kaur, Remya Zacharias
+*	Since		  1.0 (25 March 2018)
+*	Version       2.0 (27 April 2018)
+*/
+using DurakCardGame;
 using System;
 using System.Drawing;
 
@@ -43,11 +53,11 @@ namespace DurakCardLibrary
         /// </summary>
         public static bool useTrumps = false;
 
+        static Random rnd = new Random();
         /// <summary>
         /// Trump suit to use if useTrumps is true.
         /// </summary>
-        public static Suit trump = Suit.Clubs;
-
+        public static Suit trump = (Suit)rnd.Next(Enum.GetNames(typeof(Suit)).Length);
         /// <summary>
         /// Determines whether aces are higher than kings or lower
         /// than deuces.
@@ -70,6 +80,12 @@ namespace DurakCardLibrary
             mySuit = newSuit;             //Assign newSuit to Suit 
             myRank = newRank;             //Assign newRank to Rank
             this.myValue = (int)newRank;
+
+            if (myRank == Rank.Ace)
+            {
+                myValue = 14;
+            }
+
         }
         #endregion
 

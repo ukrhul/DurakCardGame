@@ -1,5 +1,4 @@
-﻿
-/** Cards.cs
+﻿/** Cards.cs
 *	
 *	This is the Cards class which is
 *	using collection to add, remove,
@@ -8,7 +7,7 @@
 *   
 *	Author		  Rahul, Jaspreet kaur, Remya Zacharias 
 *	Since		  1.0 (25 Feb 2018)
-*	Version       2.0 (11 March 2018)
+*	Version       3.0 (27 April 2018)
 *	Reference     Chapter 12 Example Application Page 295 From Beginning Visual C# 2012 
 */
 using System;

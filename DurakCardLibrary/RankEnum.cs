@@ -1,4 +1,12 @@
-﻿using System;
+﻿/** RankEnum.cs
+*	
+*	This is the Rank enumeration class
+*	that contains the rank of card
+*   
+*	Author		  Rahul, Jaspreet Kaur, Remya Zacharias
+*	Since		  1.0 (25 March 2018)
+*	Version       2.0 (27 April 2018)
+*/
 
 namespace DurakCardLibrary
 {

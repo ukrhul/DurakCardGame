@@ -1,4 +1,14 @@
-﻿using DurakCardGame;
+﻿/** Deck.cs
+*	
+*	This is Deck card class
+*	that contains deck properties 
+*	and methods
+*   
+*	Author		  Rahul, Jaspreet Kaur, Remya Zacharias
+*	Since		  1.0 (25 March 2018)
+*	Version       2.0 (27 April 2018)
+*/
+using DurakCardGame;
 using System;
 
 namespace DurakCardLibrary
@@ -242,6 +252,7 @@ namespace DurakCardLibrary
             {
                 myCards.Add(cards[0]);
                 cards.RemoveAt(0);
+              
             }
 
             return myCards;
